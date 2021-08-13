@@ -4,9 +4,6 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
-use PHPMailer\PHPMailer\PHPMailer;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Schedule;
 use App\Models\User;
 
@@ -44,12 +41,6 @@ class SendPushnotif extends Command
      */
     public function handle()
     {
-        $user = Auth::user();
-
-        if ($user->role != 'admin') {
-            return false;
-        }
-
         $contentNotif['vibrate'] = 1;
         $contentNotif['sound'] = 1;
         $contentNotif['title'] = '';
