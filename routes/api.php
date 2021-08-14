@@ -26,7 +26,7 @@ Route::post('login', [UserController::class, 'login']);
 Route::get('user-list', [UserController::class, 'userList']);
 Route::get('user-list-schedule', [ScheduleController::class, 'userListSchedule']);
 
-Route::group(['middleware' => 'auth:api'], function () {
+Route::middleware('auth:api')->group(function () {
 
     Route::post('create-schedule', [ScheduleController::class, 'createSchedule']);
     Route::put('update-schedule', [ScheduleController::class, 'updateSchedule']);
