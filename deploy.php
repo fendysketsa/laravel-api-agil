@@ -30,7 +30,7 @@ set('http_user', 'fendy');
 host('35.198.251.148')
     ->user('fendy')
     ->identityFile('/home/fcn/.ssh/id_rsa')
-    ->set('deploy_path', '/home/fendy/web/reminder/public_html');
+    ->set('deploy_path', '/var/www/html/jatisky.com/public_html');
 
 // Tasks
 
