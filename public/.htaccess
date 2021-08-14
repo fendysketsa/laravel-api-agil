@@ -3,7 +3,14 @@
         Options -MultiViews -Indexes
     </IfModule>
 
-    RewriteEngine On
+    # Turn Off mod_dir Redirect For Existing Directories
+    DirectorySlash Off
+
+    # Rewrite For Public Folder
+    RewriteEngine on
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    #RewriteEngine On
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .

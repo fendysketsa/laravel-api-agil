@@ -15,7 +15,7 @@ set('git_tty', false);
 
 set('ssh_multiplexing', false);
 
-//set('writable_mode', 'chown');
+set('writable_mode', 'chown');
 
 // Shared files/dirs between deploys
 add('shared_files', []);
