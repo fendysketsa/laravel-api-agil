@@ -15,14 +15,15 @@ class ScheduleController extends Controller
 
     public function userListSchedule()
     {
-        $schedule = Schedule::all();
+        $schedule = Schedule::where('posted_at', '>', DATE(now()))->get();
 
         $dataSchedule = array();
         foreach ($schedule as $us) {
             array_push($dataSchedule, [
                 'id' => $us->id,
                 'name' => $us->name,
-                'description' => $us->description
+                'description' => $us->description,
+                'posted_at' => $us->posted_at,
             ]);
         }
 

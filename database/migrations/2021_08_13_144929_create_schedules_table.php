@@ -17,7 +17,7 @@ class CreateSchedulesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->date('posted_at');
+            $table->dateTime('posted_at');
             $table->timestamps();
         });
     }
