@@ -14,11 +14,6 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth:api');
-    }
-
     protected $policies = [
         'App\Models\Model' => 'App\Policies\ModelPolicy',
     ];
