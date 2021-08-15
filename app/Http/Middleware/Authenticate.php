@@ -13,11 +13,6 @@ class Authenticate extends Middleware
      * @return string|null
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth:api');
-    }
-
     protected function redirectTo($request)
     {
         if (!$request->expectsJson()) {
