@@ -78,7 +78,7 @@ class SendPushnotif extends Command
         }
 
         $url = 'https://fcm.googleapis.com/fcm/send';
-        $FcmToken = User::where('role', 'team')->whereNotNull('fcm')->pluck('fcm')->all();
+        $FcmToken = User::whereNotNull('fcm')->pluck('fcm')->all();
 
         $serverKey = 'AAAACuoJzk8:APA91bFIopbddvA0c_n0IpgRQmQ3taw_7xpHAjb484eH8gKaYsFcaCBMwRMi7rJAp6-9COsZMkyL-ZduBmzUX7eq1kD72viTo-QJTfJRVSYdb3U7Y1zc-9MZ5lIw8K0I0_tt9gH5XgCG';
 
