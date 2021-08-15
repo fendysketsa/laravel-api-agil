@@ -26,7 +26,7 @@ Route::post('login', [UserController::class, 'login']);
 Route::get('user-list', [UserController::class, 'userList']);
 Route::get('user-list-schedule', [ScheduleController::class, 'userListSchedule']);
 
-Route::group(['middleware' => ['cors', 'json.response']], function () {
+Route::group(['middleware' => ['api', 'auth:api']], function () {
 
     Route::post('create-schedule', [ScheduleController::class, 'createSchedule']);
     Route::put('update-schedule', [ScheduleController::class, 'updateSchedule']);
@@ -39,9 +39,6 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
     Route::post('store-token', [UserController::class, 'updateToken']);
     Route::get('user-detail', [UserController::class, 'userDetail']);
     Route::post('user-delete', [UserController::class, 'userDelete']);
-});
-
-Route::group(['middleware' => ['api', 'auth:api']], function () {
 
     Route::post('logout', 'Api\UserController@logout');
 });
